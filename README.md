@@ -32,7 +32,7 @@ Storybook is set up for local development. Create a `*.stories.tsx` file for com
 
 To consume component libraries built with this starter before publishing to a registry, you can:
 - Run `npm link` in your library's working directory
-- Run `npm link [my-library-]` in the working directory of the consuming application
+- Run `npm link [my-library]` in the working directory of the consuming application
 - Import my-library in the consuming app as normal
 
 ## Notes
