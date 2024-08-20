@@ -37,7 +37,7 @@ To consume component libraries built with this starter before publishing to a re
 
 ## Notes
 - There is an example config for adding additional fonts (JetBrains Mono Variable), using @fontsource:
-  - Font imported in `package.json` and attached to a new global variable `font-code` in `/src/globals.css`
+  - Font imported in `package.json` and attached to a new global variable `--font-code` in `/src/globals.css`
   - Tailwind utility class for `font-code` specified in `tailwind.config.js`
   - `/src/components/Button/Button.tsx` applies the utility class
 - Build will produce an error from postcss-cli if `/src/themes` is empty -- the build still passes
