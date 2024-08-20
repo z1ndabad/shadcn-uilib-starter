@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && npm run build:styles",
-    "build:styles": "postcss ./src/globals.css -o ./dist/style.css",
+    "build:styles": "postcss ./src/globals.css -o ./dist/style.css && postcss src/themes/ --dir dist/themes",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# shadcn-uilib-starter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Intro
+This is a minimal starter config for a UI library based on shadcn components. It uses Tailwind for styling.
 
-Currently, two official plugins are available:
+## Structure
+| Top-level item | Notes |
+| ------------- | ------- |
+| `src/index.ts` | Component exports only |
+| `src/globals.css` | CSS variable definitions |
+| `src/components/*/*.tsx` | Actual component files |
+| `src/components/*/*.stories.tsx` | Storybook stories for development |
+| `package.json` | Build scripts -- build:styles will use postcss-cli to combine CSS files |
+| `postcss.config.js` | postcss plugin configuration, i.e. for postcss-import to combine CSS files |
+| `tailwind.config.js` | Define entrypoints, plugins, global theme properties for Tailwind |
+| `vite.config.ts` | Handles building package in `dist` using Vite in [library mode](https://vitejs.dev/guide/build#library-mode) |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+- Add desired shadcn components to `src/components`
+- Modify styling; some options are:
+  - Editing component files directly, e.g. by editing variants
+  - Editing global CSS variables defined in `src/globals.css`
+  - Adding new CSS files for users to import (e.g. for multi-theme setups) in `src/themes`
+  - Editing `tailwind.config.js` per the [docs](https://tailwindcss.com/docs/configuration)
+- Publish + profit
 
-## Expanding the ESLint configuration
+## Notes
+- There is an example config for adding additional fonts (JetBrains Mono Variable), using @fontsource:
+  - Font imported and attached to a new global variable `font-code` defined in `src/globals.css`
+  - Tailwind utility class for `font-code` specified in `tailwind.config.js`
+  - `src/components/Button/Button.tsx` applies the utility class
+- Build will produce an error from postcss-cli if `src/themes` is empty -- the build still passes
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## TODO
+- Improve tree-shaking and minification
+- Make the template more opinionated?
