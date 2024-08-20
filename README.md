@@ -1,7 +1,7 @@
 # shadcn-uilib-starter
 
 ## Intro
-This is a minimal starter config for a UI library based on [shadcn-ui](https://ui.shadcn.com/) components. It includes:
+This is a minimal starter config for a UI library based on [shadcn-ui](https://ui.shadcn.com/) React components. It includes:
 - [Tailwind](https://tailwindcss.com/) for styling
 - [Storybook](https://storybook.js.org/docs) for component development.
 
