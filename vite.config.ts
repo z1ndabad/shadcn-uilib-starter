@@ -7,7 +7,7 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
   plugins: [
     react({
-      jsxRuntime: "classic", // optional, bundle size
+      jsxRuntime: "classic", // optional, bundle size -- TODO: review later
     }),
     dts({
       include: ["src/**/*"],
@@ -24,9 +24,12 @@ export default defineConfig({
         ...Object.keys(peerDependencies),
         ...Object.keys(dependencies),
       ],
-      output: { preserveModules: true, exports: "named" },
+      output: {
+        preserveModules: true,
+        exports: "named",
+        assetFileNames: (assetInfo) => assetInfo.name!,
+      },
     },
-
     target: "esnext",
     sourcemap: true,
   },
