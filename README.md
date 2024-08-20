@@ -27,6 +27,14 @@ This is a minimal starter config for a UI library based on [shadcn-ui](https://u
   - Editing `tailwind.config.js` per the [docs](https://tailwindcss.com/docs/configuration)
 - Publish + profit
 
+## Local development
+Storybook is set up for local development. Create a `*.stories.tsx` file for component and run `npm run storybook` to work on it in the UI.
+
+To consume component libraries built with this starter before publishing to a registry, you can:
+- Run `npm link` in your library's working directory
+- Run `npm link \[my-library-\]` in the working directory of the consuming application
+- Import my-library in the consuming app as normal
+
 ## Notes
 - There is an example config for adding additional fonts (JetBrains Mono Variable), using @fontsource:
   - Font imported in `package.json` and attached to a new global variable `font-code` in `src/globals.css`
