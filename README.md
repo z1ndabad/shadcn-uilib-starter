@@ -1,10 +1,10 @@
 # shadcn-uilib-starter
 
 ## Intro
-This is a minimal starter config for a UI library based on [shadcn-ui](https://ui.shadcn.com/) components. It is set up to use [Tailwind](https://tailwindcss.com/) for styling.
+This is a minimal starter config for a UI library based on [shadcn-ui](https://ui.shadcn.com/) components. It is set up to use [Tailwind](https://tailwindcss.com/) for styling, and Storybook for component development.
 
 ## Structure
-| Top-level item | Notes |
+| File/s | Notes |
 | ------------- | ------- |
 | `src/index.ts` | Component exports only |
 | `src/globals.css` | CSS variable definitions |
@@ -17,7 +17,7 @@ This is a minimal starter config for a UI library based on [shadcn-ui](https://u
 
 ## Usage
 - Create your own lib from the template
-- Add desired shadcn-ui components to `src/components`
+- Add desired shadcn-ui components to `src/components/MyComponent`
 - Modify styling. Some options are:
   - Editing component files directly, e.g. by editing variants
   - Editing global CSS variables defined in `src/globals.css`
