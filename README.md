@@ -1,7 +1,7 @@
 # shadcn-uilib-starter
 
 ## Intro
-This is a minimal starter config for a UI library based on shadcn components. It uses Tailwind for styling.
+This is a minimal starter config for a UI library based on [shadcn-ui](https://ui.shadcn.com/) components. It is set up to use [Tailwind](https://tailwindcss.com/) for styling.
 
 ## Structure
 | Top-level item | Notes |
@@ -16,8 +16,9 @@ This is a minimal starter config for a UI library based on shadcn components. It
 | `vite.config.ts` | Handles building package in `dist` using Vite in [library mode](https://vitejs.dev/guide/build#library-mode) |
 
 ## Usage
-- Add desired shadcn components to `src/components`
-- Modify styling; some options are:
+- Create your own lib from the template
+- Add desired shadcn-ui components to `src/components`
+- Modify styling. Some options are:
   - Editing component files directly, e.g. by editing variants
   - Editing global CSS variables defined in `src/globals.css`
   - Adding new CSS files for users to import (e.g. for multi-theme setups) in `src/themes`
@@ -26,7 +27,7 @@ This is a minimal starter config for a UI library based on shadcn components. It
 
 ## Notes
 - There is an example config for adding additional fonts (JetBrains Mono Variable), using @fontsource:
-  - Font imported and attached to a new global variable `font-code` defined in `src/globals.css`
+  - Font imported in `package.json` and attached to a new global variable `font-code` in `src/globals.css`
   - Tailwind utility class for `font-code` specified in `tailwind.config.js`
   - `src/components/Button/Button.tsx` applies the utility class
 - Build will produce an error from postcss-cli if `src/themes` is empty -- the build still passes
