@@ -19,7 +19,7 @@ This is a minimal starter config for a UI library based on [shadcn-ui](https://u
 
 ## Usage
 - Create your own lib from the template
-- Add desired shadcn-ui components to `src/components/MyComponent`
+- Add desired shadcn-ui components to `src/components/MyComponent` (or write your own)
 - Modify styling. Some options are:
   - Editing component files directly, e.g. by editing variants
   - Editing global CSS variables defined in `src/globals.css`
